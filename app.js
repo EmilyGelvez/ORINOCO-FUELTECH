@@ -45,3 +45,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// 
+let currentIndex = 0;
+let autoPlayInterval; // Variable para guardar el temporizador
+
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.dot');
+const track = document.querySelector('.carousel-track');
+
+// Función principal para mover el carrusel
+function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Actualizar estado de las bolitas
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
+
+// Función para saltar al siguiente slide automáticamente
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+}
+
+// Función para cuando haces clic manualmente en las bolitas
+function currentSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+    resetTimer(); // Reiniciamos el tiempo para que no salte de inmediato
+}
+
+// Función para iniciar/reiniciar el temporizador
+function resetTimer() {
+    clearInterval(autoPlayInterval); // Borra el contador anterior
+    autoPlayInterval = setInterval(nextSlide, 5000); // Crea uno nuevo de 5 segundos
+}
+
+// Iniciar el carrusel por primera vez
+resetTimer();
