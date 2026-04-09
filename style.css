@@ -954,6 +954,25 @@ img.certifications__img {
     background-color: var(--gold);
 }
 
+
+/* GRACIAS */
+.gracias__logo{
+    max-width: 200PX;
+}
+
+.container-gracias{
+        max-width: 550px;
+    height: 100vh;
+    margin: 0 auto;
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
 /* Responsivo para móviles */
 @media (max-width: 768px) {
     .slide-content img, .text-box { width: 100%; }
