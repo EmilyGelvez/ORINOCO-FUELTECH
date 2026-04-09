@@ -476,6 +476,8 @@
             position: absolute;
             left: 0;
         }
+
+        
         
         /* Services Section */
         .services {
@@ -538,6 +540,18 @@
 .carrousel__about {
     background-color: var(--gray-light);
     margin: 80px 0;
+}
+
+        img.block__img.block__img-pys {
+    object-position: 0px -170px;
+}
+
+    .block__img-sep{
+        object-position: 0px -120px;
+    }
+
+    .block__img-byd{
+    object-position: 0px -15px;
 }
         
         /* Certifications Section */
@@ -917,6 +931,7 @@ img.certifications__img {
     height: 100%;
     object-fit: cover;
     min-height: 300px;
+    object-position: right;
 }
 
 .text-box {
